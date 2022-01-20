@@ -14,23 +14,36 @@ const Navbar = () => {
                 <div className="collapse navbar-collapse" id="navbarColor01">
                     <ul className="navbar-nav me-auto">
                         <li className="nav-item">
-                            <NavLink className="nav-link active" to="/">Accueil
-                                {/*<span className="visually-hidden">(current)</span>*/}
+                            <NavLink className="nav-link" to="/">
+                                Accueil
                             </NavLink>
                         </li>
                         <li className="nav-item">
-                            <NavLink className="nav-link active" to="/posts">Posts</NavLink>
+                            <NavLink className="nav-link active" to="/posts">
+                                Posts
+                            </NavLink>
                         </li>
                     </ul>
                     <ul className="navbar-nav ml-auto">
                         <li className="nav-item">
-                            <NavLink className="nav-link active" to="/login">Login
-                                {/*<span className="visually-hidden">(current)</span>*/}
+                            <NavLink className="nav-link active" to="/login">
+                                Login
                             </NavLink>
                         </li>
                         <li className="nav-item">
-                            <NavLink className="nav-link active" to="/register">Posts
+                            <NavLink className="nav-link active" to="/register">
+                                S'enregistrer
                             </NavLink>
+                        </li>
+                        <li className="nav-item">
+                            <NavLink className="nav-link active" to="/account">
+                                Mon compte
+                            </NavLink>
+                        </li>
+                        <li className="nav-item">
+                            <button className="btn btn-danger">
+                                Deconnexion
+                            </button>
                         </li>
                     </ul>
                 </div>
