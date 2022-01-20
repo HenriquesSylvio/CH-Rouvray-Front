@@ -11399,3 +11399,11 @@ fieldset:disabled .btn {
 .badge.bg-light {
   color: #333;
 }
+
+.centered {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 100vh;
+}
