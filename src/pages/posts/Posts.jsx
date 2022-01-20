@@ -2,8 +2,7 @@ import React from 'react';
 
 const Posts = (props) => {
     return (
-        <div className="card-container">
-            <br/>
+        <div className="card-container mt-2">
             <div className="card border-primary mb-2">
                 <div className="card-header">Post name</div>
                 <div className="card-body">
