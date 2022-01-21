@@ -42,6 +42,16 @@ const Register = (props) => {
                                     // placeholder="Mot de passe"
                                 />
                             </div>
+                            <div className="form-group my-2">
+                                <label htmlFor="password">Confirmation du mot de passe :</label>
+                                <input
+                                    type="password"
+                                    name="password"
+                                    className="form-control"
+                                    id="password"
+                                    // placeholder="Mot de passe"
+                                />
+                            </div>
                             <button type="submit" className="btn btn-outline-primary">
                                 S'enregistrer
                             </button>
