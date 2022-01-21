@@ -18,7 +18,7 @@ import Auth from "./contexts/Auth";
 function App() {
     const [isAuthenticated, setIsAuthenticated] = useState(hasAuthenticated());
   return (
-      <Auth.Provider value={{isAuthenticated}}>
+      <Auth.Provider value={{isAuthenticated, setIsAuthenticated}}>
           <HashRouter>
               <div className="container-fluid">
                   <Navbar/>

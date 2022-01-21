@@ -3,9 +3,9 @@ import Auth from "../contexts/Auth";
 import {Redirect, Route} from "react-router-dom";
 
 const AuthenticatedRoute = ({ path, component }) => {
-    const {isAuthnticated} = useContext(Auth);
+    const {isAuthenticated} = useContext(Auth);
 
-    return isAuthnticated ? (
+    return isAuthenticated ? (
         <Route exact path={path} component={component} />
     ) : (
         <Redirect to="/login" />

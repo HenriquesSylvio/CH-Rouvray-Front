@@ -4,6 +4,11 @@ import Auth from "../contexts/Auth";
 
 const Navbar = () => {
     const {isAuthenticated} = useContext(Auth);
+
+    const handleLogout = () => {
+        console.log('deco')
+    }
+
     return(
         <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
             <div className="container-fluid">
@@ -48,7 +53,7 @@ const Navbar = () => {
                                     </NavLink>
                                 </li>
                                 <li className="nav-item">
-                                    <button className="btn btn-danger">
+                                    <button className="btn btn-danger" onClick={handleLogout}>
                                         Deconnexion
                                     </button>
                                 </li>
