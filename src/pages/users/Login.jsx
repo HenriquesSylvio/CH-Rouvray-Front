@@ -1,4 +1,5 @@
 import React, {useContext, useEffect, useState} from 'react';
+import { toast } from 'react-toastify';
 import Auth from "../../contexts/Auth";
 import {login} from "../../services/AuthApi";
 // import login from "../../services/AuthApi";
@@ -23,8 +24,10 @@ const Login = ({history}) => {
             const response = await login(user);
             setIsAuthenticated(response);
             history.replace('/account')
+            toast.success('Bienvenue ! 😄')
         } catch ({response}) {
-            console.log(response);
+            toast.error("L'e-mail ou le mot de passe est incorrect. Veuillez réessayer ! 😃")
+            console.log(response)
         }
     }
 

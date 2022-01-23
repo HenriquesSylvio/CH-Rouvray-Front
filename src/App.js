@@ -1,4 +1,6 @@
 import logo from './logo.svg';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css'
 import './App.css';
 import './bootstrap.css'
 import { HashRouter, Route, Switch } from "react-router-dom";
@@ -33,6 +35,7 @@ function App() {
                   </Switch>
               </div>
           </HashRouter>
+          <ToastContainer />
       </Auth.Provider>
   );
 }
