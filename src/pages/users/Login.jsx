@@ -54,7 +54,7 @@ const Login = ({history}) => {
                             onChange={handleChange}
                         />
                     </div>
-                    <div className="form-group my-2">
+                    <div className="form-group my-2  mb-4">
                         <label htmlFor="password">Mot de passe</label>
                         <input
                             type="password"
@@ -65,9 +65,11 @@ const Login = ({history}) => {
                             onChange={handleChange}
                         />
                     </div>
-                    <button type="submit" className="btn btn-outline-primary">
-                        Se connecter
-                    </button>
+                    <div className="modal-footer">
+                        <button type="submit" className="btn btn-outline-primary">
+                            Se connecter
+                        </button>
+                    </div>
                 </fieldset>
             </form>
         </div>

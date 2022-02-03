@@ -141,3 +141,7 @@ form fieldset legend {
 #cancelBtn {
   background-color: crimson;
 }
+
+.form-inputs p {
+  color: red;
+}

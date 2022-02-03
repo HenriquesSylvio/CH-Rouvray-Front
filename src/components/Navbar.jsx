@@ -3,7 +3,6 @@ import { NavLink } from "react-router-dom";
 import Auth from "../contexts/Auth";
 import {logout} from "../services/AuthApi";
 import {toast} from "react-toastify";
-import LoginModal from "./LoginModal";
 
 const Navbar = () => {
     const {isAuthenticated, setIsAuthenticated} = useContext(Auth);
@@ -13,8 +12,6 @@ const Navbar = () => {
         setIsAuthenticated(false);
         toast.info('A bientôt ! 😋');
     }
-
-    const [openModal, setOpenModal] = useState(false);
 
     return(
         <div>
@@ -48,12 +45,6 @@ const Navbar = () => {
                                         <NavLink className="nav-link active" to="/login">
                                             Se connecter
                                         </NavLink>
-                                        <button className="openModalBtn"
-                                        onClick={() => {
-                                            setOpenModal(true);
-                                        }}>
-                                            Se connecter
-                                        </button>
                                     </li>
 
                                     <li className="nav-item">
@@ -80,9 +71,6 @@ const Navbar = () => {
                     </div>
                 </div>
             </nav>
-            <div>
-                {openModal && <LoginModal closeModal={setOpenModal}/>}
-            </div>
         </div>
     )
 }
