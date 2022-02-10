@@ -13,9 +13,17 @@ const Navbar = () => {
         toast.info('A bientôt ! 😋');
     }
 
+    const navbarStyles = {
+        position: 'fixed',
+        height: '60px',
+        width: '83.2%',
+        // backgroundColor: 'grey',
+        textAlign: 'center'
+    }
+
     return(
-        <div>
-            <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div className="nav">
+            <nav className="navbar bg-transparent navbar-expand-lg navbar-dark bg-primary">
                 <div className="container-fluid">
                     <span className="navbar-brand">CH du Rouvray</span>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse"

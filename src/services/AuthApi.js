@@ -2,7 +2,7 @@ import axios from 'axios';
 import jwtDecode from "jwt-decode";
 import { getItem, addItem, removeItem } from "./LocaleStorage";
 
-const URLApi = 'http://127.0.0.1:8000/api/'
+const URLApi = "http://127.0.0.1:8000/api/"
 export function hasAuthenticated() {
     const token = getItem('Token');
     const result = token ? tokenIsValid(token) : false;
