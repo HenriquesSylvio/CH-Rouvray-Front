@@ -91,7 +91,10 @@ const Register = ({history}) => {
     // }
 
     return (
-            <div className="tab-content form-inputs">
+        <div className="component-wrapper">
+            <div className="title-page mb-5">
+                <h1 className="text-center text-white">Création de compte</h1>
+            </div>
                 <form className="form-profile" onSubmit={handleSubmit} noValidate>
                         <fieldset>
                             <legend>Création de votre compte</legend>

@@ -39,8 +39,11 @@ const Login = ({history}) => {
     }, [history, isAuthenticated]);
 
     return (
-        <div className="tab-content mt-3">
-            <form className="form-profile" onSubmit={handleSubmit}>
+        <div className="component-wrapper">
+            <div className="title-page mb-5">
+                <h1 className="text-center text-white">Connection</h1>
+            </div>
+            <form className="" onSubmit={handleSubmit}>
                 <fieldset>
                     <legend>Se connecter</legend>
                     <div className="form-group my-2">

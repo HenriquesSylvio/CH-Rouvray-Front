@@ -6,11 +6,11 @@ import Modal from '@mui/material/Modal';
 import Fab from "@mui/material/Fab";
 import AddIcon from "@mui/icons-material/Add";
 import {useEffect, useState} from "react";
-import validate from "../services/ValidateInfoPost";
+import validate from "../services/ValidateInfoComment";
 import {register} from "../services/RegisterApi";
 import {toast} from "react-toastify";
-import {AddPost} from "../services/AddPostApi";
-import { useHistory } from 'react-router-dom'
+import {AddComment} from "../services/AddCommentApi";
+import { useHistory, useLocation } from 'react-router-dom'
 
 const style = {
     position: 'absolute',
@@ -34,14 +34,16 @@ const floatingMenuButtonStyle = {
 };
 
 
-export default function AddPostButton() {
+export default function AddCommentButton(props) {
     const [open, setOpen] = React.useState(false);
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
+    const queryParams = new URLSearchParams(window.location.search);
     const history = useHistory()
+    const idPost = props.idPost
     const [values, setValues] = useState({
-        name: '',
-        content: ''
+        content: '',
+        belongTo: '/api/posts/' + idPost
     });
 
     const [errors, setErrors] = useState({});
@@ -64,18 +66,18 @@ export default function AddPostButton() {
 
     useEffect(async () => {
             if (Object.keys(errors).length === 0 && isSubmitting) {
-                //console.log(values);
-                try {
-                    const response = await AddPost(values);
+                console.log(values);
+                 try {
+                    const response = await AddComment(values);
                     //console.log('/post/' + response.data.id);
-                    history.replace('/post/' + response.data.id)
+                    // history.replace('/post/' + response.data.id)
                     //history.replace('/post/' & response.data.id)
-                    toast.success('Création du post réussi ! 😄')
-                } catch ({response}) {
+                    toast.success('Création du commentaire réussi ! 😄')
+                 } catch ({response}) {
                     //toast.error(response.data.violations[0].message + " ! 😃")
                     //"Un problème est survenu lors de la création de votre compte, veuillez réessayer ! 😃"
                     //console.log('/post/' + response.data["id"]);
-                }
+                 }
             }
         },
         [errors]
@@ -88,7 +90,7 @@ export default function AddPostButton() {
             {/*<Button onClick={handleOpen}>Open modal</Button>*/}
             <Fab style={floatingMenuButtonStyle} onClick={handleOpen} variant="extended">
                 <AddIcon sx={{ mr: 1 }} />
-                Créer un post
+                Créer un commentaire
             </Fab>
             <Modal
                 open={open}
@@ -99,22 +101,17 @@ export default function AddPostButton() {
                 <form className="form-profile" onSubmit={handleSubmit} noValidate>
                     <Box sx={style}>
                         <div className="form-group my-2">
-                            <label htmlFor="name">Titre :</label><input
-                            type="text"
-                            name="name"
-                            className="form-control"
-                            id="name"
-                            value={values.name}
-                            onChange={handleChange}
-                            // placeholder="mail@mail.fr"
-                        />
-
-                            {errors.name && <p>{errors.name}</p>}
-                        </div>
-                        <div className="form-group my-2">
+                            {/*<input*/}
+                            {/*    style={{display: 'none'}}*/}
+                            {/*    type="text"*/}
+                            {/*    name="belongTo"*/}
+                            {/*    className="form-control"*/}
+                            {/*    id="belongTo"*/}
+                            {/*    value="/api/posts/12"*/}
+                            {/*/>*/}
                             <label htmlFor="content">Contenu :</label>
                             <textarea
-                                rows="22"
+                                rows="25"
                                 //type="multiliner"
                                 name="content"
                                 className="form-control"
@@ -127,7 +124,7 @@ export default function AddPostButton() {
                         </div>
                         <div className="modal-footer">
                             <button type="submit" className="btn btn-outline-primary">
-                                Créer le post
+                                Créer le commentaire
                             </button>
                         </div>
                     </Box>

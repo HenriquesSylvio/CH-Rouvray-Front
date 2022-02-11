@@ -102,7 +102,7 @@ class Posts extends Component {
                         null
                 }
                         <AddPostButton/>
-                        <Pagination className="mt-3" count={pageNumberMax} color="primary" hidePrevButton hideNextButton onChange={(pageNumber) => this.getPostsData(pageNumber.target.innerText)} />
+                        <Pagination className="muiToolbar-middle mt-3" count={pageNumberMax} color="primary" hidePrevButton hideNextButton onChange={(pageNumber) => this.getPostsData(pageNumber.target.innerText)} />
                     </div>
             </div>
         )

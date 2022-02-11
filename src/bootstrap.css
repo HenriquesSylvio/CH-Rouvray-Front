@@ -11500,3 +11500,9 @@ fieldset:disabled .btn {
   margin-left: 0;
 }
 
+.muiToolbar-middle {
+  display: flex;
+  justify-content: center;
+  padding: 24px;
+}
+
