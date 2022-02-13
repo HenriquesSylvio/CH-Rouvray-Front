@@ -145,3 +145,10 @@ form fieldset legend {
 .form-inputs p {
   color: red;
 }
+
+.horizontal-center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+

@@ -30,6 +30,7 @@ function App() {
                       <Route exact path='/post/:id' component={Post}/>
                       <Route exact path='/register' component={Register}/>
                       <Route exact path='/login' component={Login}/>
+                      {/*<Route exact path='/account' component={Account}/>*/}
                       <AuthenticatedRoute path='/account' component={Account}/>
                       <AuthenticatedRoute path='/profile' component={Profile}/>
                   </Switch>

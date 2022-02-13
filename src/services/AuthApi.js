@@ -18,6 +18,7 @@ export function login(credentials) {
     return axios
         .post(URLApi + "login_check", credentials)
         .then(response => response.data.token)
+        .then(console.log(response))
         .then(token => {
             addItem('Token', token);
 
